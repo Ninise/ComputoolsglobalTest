@@ -11,11 +11,11 @@ import com.ninise.computoolsglobaltest.mvp.model.viewholders.CardViewViewHolder;
 
 import java.util.List;
 
-public class CardViewAdapter extends RecyclerView.Adapter<CardViewViewHolder> {
+public class ActivitiesAdapter extends RecyclerView.Adapter<CardViewViewHolder> {
 
     private List<CardViewEntity> mDataSet;
 
-    public CardViewAdapter(List<CardViewEntity> dataSet) {
+    public ActivitiesAdapter(List<CardViewEntity> dataSet) {
         mDataSet = dataSet;
     }
 
