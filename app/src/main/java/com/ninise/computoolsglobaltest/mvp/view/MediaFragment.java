@@ -12,13 +12,13 @@ import android.view.ViewGroup;
 
 import com.ninise.computoolsglobaltest.R;
 import com.ninise.computoolsglobaltest.mvp.model.adapters.CardViewAdapter;
-import com.ninise.computoolsglobaltest.mvp.presenter.media.IMediaView;
-import com.ninise.computoolsglobaltest.mvp.presenter.media.MediaPresenter;
+import com.ninise.computoolsglobaltest.mvp.presenter.lists.IRecyclerListView;
+import com.ninise.computoolsglobaltest.mvp.presenter.lists.media.MediaPresenter;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
-public class MediaFragment extends Fragment implements IMediaView {
+public class MediaFragment extends Fragment implements IRecyclerListView {
 
     @Bind(R.id.rv) RecyclerView mRecyclerView;
 
@@ -52,7 +52,7 @@ public class MediaFragment extends Fragment implements IMediaView {
     @Override
     public void onResume() {
         super.onResume();
-        mPresenter.getMedia();
+        mPresenter.getRecyclerAdapter();
     }
 
     @Override
@@ -62,7 +62,7 @@ public class MediaFragment extends Fragment implements IMediaView {
     }
 
     @Override
-    public void getCardViewAdapter(CardViewAdapter adapter) {
+    public void setRecyclerAdapter(CardViewAdapter adapter) {
         adapter.notifyDataSetChanged();
         mRecyclerView.setAdapter(adapter);
     }
