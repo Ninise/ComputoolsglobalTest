@@ -6,12 +6,14 @@ import android.support.v4.app.Fragment;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.jakewharton.rxbinding.support.v7.widget.RxRecyclerView;
 import com.ninise.computoolsglobaltest.R;
-import com.ninise.computoolsglobaltest.mvp.model.adapters.CardViewAdapter;
+import com.ninise.computoolsglobaltest.mvp.model.adapters.MediaAdapter;
 import com.ninise.computoolsglobaltest.mvp.presenter.lists.IRecyclerListView;
 import com.ninise.computoolsglobaltest.mvp.presenter.lists.media.MediaPresenter;
 
@@ -52,7 +54,7 @@ public class MediaFragment extends Fragment implements IRecyclerListView {
     @Override
     public void onResume() {
         super.onResume();
-        mPresenter.getRecyclerAdapter();
+        mPresenter.getRecyclerAdapter(getActivity());
     }
 
     @Override
@@ -62,7 +64,7 @@ public class MediaFragment extends Fragment implements IRecyclerListView {
     }
 
     @Override
-    public void setRecyclerAdapter(CardViewAdapter adapter) {
+    public void setRecyclerAdapter(RecyclerView.Adapter adapter) {
         adapter.notifyDataSetChanged();
         mRecyclerView.setAdapter(adapter);
     }

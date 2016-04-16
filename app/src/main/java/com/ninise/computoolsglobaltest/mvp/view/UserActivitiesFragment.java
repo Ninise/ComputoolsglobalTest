@@ -11,7 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.ninise.computoolsglobaltest.R;
-import com.ninise.computoolsglobaltest.mvp.model.adapters.CardViewAdapter;
+import com.ninise.computoolsglobaltest.mvp.model.adapters.ActivitiesAdapter;
 import com.ninise.computoolsglobaltest.mvp.presenter.lists.IRecyclerListView;
 import com.ninise.computoolsglobaltest.mvp.presenter.lists.activities.UserActivitiesPresenter;
 
@@ -52,7 +52,7 @@ public class UserActivitiesFragment extends Fragment implements IRecyclerListVie
     @Override
     public void onResume() {
         super.onResume();
-        mPresenter.getRecyclerAdapter();
+        mPresenter.getRecyclerAdapter(getActivity());
     }
 
     @Override
@@ -62,7 +62,7 @@ public class UserActivitiesFragment extends Fragment implements IRecyclerListVie
     }
 
     @Override
-    public void setRecyclerAdapter(CardViewAdapter adapter) {
+    public void setRecyclerAdapter(RecyclerView.Adapter adapter) {
         adapter.notifyDataSetChanged();
         mRecyclerView.setAdapter(adapter);
     }

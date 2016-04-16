@@ -1,12 +1,13 @@
 package com.ninise.computoolsglobaltest.mvp.presenter.lists.media;
 
 
-import com.ninise.computoolsglobaltest.mvp.model.adapters.CardViewAdapter;
+import android.content.Context;
+
+import com.ninise.computoolsglobaltest.mvp.model.adapters.MediaAdapter;
 import com.ninise.computoolsglobaltest.mvp.model.entities.CardViewEntity;
+import com.ninise.computoolsglobaltest.mvp.model.media.UserMedia;
 import com.ninise.computoolsglobaltest.mvp.presenter.lists.IRecyclerListPresenter;
 import com.ninise.computoolsglobaltest.mvp.presenter.lists.IRecyclerListView;
-
-import java.util.Arrays;
 
 public class MediaPresenter implements IRecyclerListPresenter {
 
@@ -18,12 +19,15 @@ public class MediaPresenter implements IRecyclerListPresenter {
 
 
     @Override
-    public void getRecyclerAdapter() {
-        mView.setRecyclerAdapter(
-                new CardViewAdapter(Arrays.asList(
-                        new CardViewEntity("1", "one"),
-                        new CardViewEntity("2", "two"))
-                )
-        );
+    public void getRecyclerAdapter(Context context) {
+        UserMedia.getUserMusic(context)
+                .map(s -> new CardViewEntity(s.getTitle(), s.getDesrp()))
+                .toList()
+                .subscribe(cardViewEntities -> {
+                    mView.setRecyclerAdapter(
+                            new MediaAdapter(context, cardViewEntities)
+                    );
+                });
+
     }
 }

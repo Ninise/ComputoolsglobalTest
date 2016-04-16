@@ -1,9 +1,9 @@
 package com.ninise.computoolsglobaltest.mvp.presenter.lists;
 
 
-import com.ninise.computoolsglobaltest.mvp.model.adapters.CardViewAdapter;
+import android.support.v7.widget.RecyclerView;
 
 public interface IRecyclerListView {
 
-    void setRecyclerAdapter(CardViewAdapter adapter);
+    void setRecyclerAdapter(RecyclerView.Adapter adapter);
 }

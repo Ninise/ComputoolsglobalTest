@@ -1,6 +1,8 @@
 package com.ninise.computoolsglobaltest.mvp.presenter.lists.activities;
 
-import com.ninise.computoolsglobaltest.mvp.model.adapters.CardViewAdapter;
+import android.content.Context;
+
+import com.ninise.computoolsglobaltest.mvp.model.adapters.ActivitiesAdapter;
 import com.ninise.computoolsglobaltest.mvp.model.entities.CardViewEntity;
 import com.ninise.computoolsglobaltest.mvp.presenter.lists.IRecyclerListPresenter;
 import com.ninise.computoolsglobaltest.mvp.presenter.lists.IRecyclerListView;
@@ -16,9 +18,9 @@ public class UserActivitiesPresenter implements IRecyclerListPresenter {
     }
 
     @Override
-    public void getRecyclerAdapter() {
+    public void getRecyclerAdapter(Context context) {
         mView.setRecyclerAdapter(
-                new CardViewAdapter(Arrays.asList(
+                new ActivitiesAdapter(Arrays.asList(
                         new CardViewEntity("3", "three"),
                         new CardViewEntity("4", "four"))
                 )
