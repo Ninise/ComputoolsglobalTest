@@ -6,16 +6,16 @@ import android.view.LayoutInflater;
 import android.view.ViewGroup;
 
 import com.ninise.computoolsglobaltest.R;
-import com.ninise.computoolsglobaltest.mvp.model.entities.CardViewEntity;
+import com.ninise.computoolsglobaltest.mvp.model.entities.DoubleViewEntity;
 import com.ninise.computoolsglobaltest.mvp.model.viewholders.CardViewViewHolder;
 
 import java.util.List;
 
 public class ActivitiesAdapter extends RecyclerView.Adapter<CardViewViewHolder> {
 
-    private List<CardViewEntity> mDataSet;
+    private List<DoubleViewEntity> mDataSet;
 
-    public ActivitiesAdapter(List<CardViewEntity> dataSet) {
+    public ActivitiesAdapter(List<DoubleViewEntity> dataSet) {
         mDataSet = dataSet;
     }
 

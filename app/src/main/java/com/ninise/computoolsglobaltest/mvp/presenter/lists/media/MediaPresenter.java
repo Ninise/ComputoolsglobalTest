@@ -4,7 +4,7 @@ package com.ninise.computoolsglobaltest.mvp.presenter.lists.media;
 import android.content.Context;
 
 import com.ninise.computoolsglobaltest.mvp.model.adapters.MediaAdapter;
-import com.ninise.computoolsglobaltest.mvp.model.entities.CardViewEntity;
+import com.ninise.computoolsglobaltest.mvp.model.entities.DoubleViewEntity;
 import com.ninise.computoolsglobaltest.mvp.model.media.UserMedia;
 import com.ninise.computoolsglobaltest.mvp.presenter.lists.IRecyclerListPresenter;
 import com.ninise.computoolsglobaltest.mvp.presenter.lists.IRecyclerListView;
@@ -21,7 +21,7 @@ public class MediaPresenter implements IRecyclerListPresenter {
     @Override
     public void getRecyclerAdapter(Context context) {
         UserMedia.getUserMusic(context)
-                .map(s -> new CardViewEntity(s.getTitle(), s.getDesrp()))
+                .map(s -> new DoubleViewEntity(s.getTitle(), s.getDesrp()))
                 .toList()
                 .subscribe(cardViewEntities -> {
                     mView.setRecyclerAdapter(

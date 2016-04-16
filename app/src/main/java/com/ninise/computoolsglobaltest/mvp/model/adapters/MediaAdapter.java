@@ -9,8 +9,8 @@ import android.view.ViewGroup;
 import android.widget.Toast;
 
 import com.ninise.computoolsglobaltest.R;
-import com.ninise.computoolsglobaltest.mvp.activities.ActivitiesCounter;
-import com.ninise.computoolsglobaltest.mvp.model.entities.CardViewEntity;
+import com.ninise.computoolsglobaltest.mvp.model.activities.ActivitiesCounter;
+import com.ninise.computoolsglobaltest.mvp.model.entities.DoubleViewEntity;
 import com.ninise.computoolsglobaltest.mvp.model.network.NetworkConnection;
 import com.ninise.computoolsglobaltest.mvp.model.viewholders.CardViewViewHolder;
 import com.ninise.computoolsglobaltest.utils.Constants;
@@ -19,10 +19,10 @@ import java.util.List;
 
 public class MediaAdapter extends RecyclerView.Adapter<CardViewViewHolder> {
 
-    private List<CardViewEntity> mDataSet;
+    private List<DoubleViewEntity> mDataSet;
     private Context mContext;
 
-    public MediaAdapter(Context context, List<CardViewEntity> dataSet) {
+    public MediaAdapter(Context context, List<DoubleViewEntity> dataSet) {
         mDataSet = dataSet;
         mContext = context;
     }
@@ -51,7 +51,7 @@ public class MediaAdapter extends RecyclerView.Adapter<CardViewViewHolder> {
 
                    ActivitiesCounter
                            .getInstance()
-                           .addActivity(new CardViewEntity(
+                           .addActivity(new DoubleViewEntity(
                                    Constants.FROM_MEDIA,
                                    Constants.SEND_EMAIL)
                            );

@@ -1,11 +1,11 @@
 package com.ninise.computoolsglobaltest.mvp.model.entities;
 
-public class CardViewEntity {
+public class DoubleViewEntity {
 
     private String mTitle;
     private String mDesrp;
 
-    public CardViewEntity(String title, String desrp) {
+    public DoubleViewEntity(String title, String desrp) {
         mTitle = title;
         mDesrp = desrp;
     }
