@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/menuMedia"
+        android:checked="false"
+        android:title="@string/menu_media" />
+
+    <item
+        android:id="@+id/menuUserActivities"
+        android:checked="false"
+        android:title="@string/menu_user_activities" />
+
+    <item
+        android:id="@+id/menuSocket"
+        android:checked="false"
+        android:title="@string/menu_socket"/>
+
+    <item
+        android:id="@+id/menuExit"
+        android:checked="false"
+        android:title="@string/menu_exit" />
+
+</menu>

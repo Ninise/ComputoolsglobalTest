@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">ComputoolsglobalTest</string>
+    <string name="navigation_created">Created by Nikitin N.</string>
+    <string name="menu_exit">Exit</string>
+    <string name="menu_socket">Socket</string>
+    <string name="menu_user_activities">User Activities</string>
+    <string name="menu_media">Media</string>
+    <string name="navigation_test_task">Test task</string>
 </resources>

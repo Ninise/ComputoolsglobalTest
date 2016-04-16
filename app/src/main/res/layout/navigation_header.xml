@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="190dp"
+                android:orientation="vertical"
+                android:background="@drawable/background_material">
+
+    <TextView
+        android:id="@+id/navigationTestTask"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/powered"
+        android:layout_marginLeft="8dp"
+        android:paddingBottom="4dp"
+        android:textAllCaps="true"
+        android:text="@string/navigation_test_task"
+        style="@style/NavigationHeaderTextViewStyle"
+        />
+
+    <TextView
+        android:id="@+id/powered"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignLeft="@+id/navigationTestTask"
+        android:layout_alignStart="@+id/navigationTestTask"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="2dp"
+        android:text="@string/navigation_created"
+        style="@style/NavigationHeaderTextViewStyle"
+        />
+
+</RelativeLayout>
