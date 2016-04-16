@@ -51,7 +51,7 @@ public class SocketFragment extends Fragment implements ISocketView {
         RxView.clicks(mGetButton).subscribe(
                 aVoid -> {
                     mProgressDialog = ProgressDialog.show(getActivity(), mProgressDialogTitle, mProgressDialogMessage);
-                    mPresenter.getResponse(mGetEditText.getText().toString());
+                    mPresenter.getResponse(getActivity(), mGetEditText.getText().toString());
                 }
         );
 
