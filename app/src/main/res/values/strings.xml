@@ -6,4 +6,6 @@
     <string name="menu_user_activities">User Activities</string>
     <string name="menu_media">Media</string>
     <string name="navigation_test_task">Test task</string>
+    <string name="openDrawer">Open</string>
+    <string name="closeDrawer">Close</string>
 </resources>
