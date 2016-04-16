@@ -14,7 +14,7 @@
         android:paddingBottom="4dp"
         android:textAllCaps="true"
         android:text="@string/navigation_test_task"
-        style="@style/NavigationHeaderTextViewStyle"
+        style="@style/RobotoTextViewStyle"
         />
 
     <TextView
@@ -27,7 +27,7 @@
         android:layout_marginBottom="8dp"
         android:layout_marginLeft="2dp"
         android:text="@string/navigation_created"
-        style="@style/NavigationHeaderTextViewStyle"
+        style="@style/RobotoTextViewStyle"
         />
 
 </RelativeLayout>

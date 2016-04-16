@@ -3,4 +3,40 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
+    <EditText
+        android:id="@+id/socketEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginLeft="5dp"
+        android:hint="@string/socket_get_hint"
+        android:minHeight="60dp"
+        />
+
+    <Button
+        android:id="@+id/socketGetButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/socketEditText"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginLeft="5dp"
+        android:text="@string/socket_get_button"
+        style="@style/RobotoButtonStyle"
+        />
+
+    <TextView
+        android:id="@+id/socketGetTextView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/socketGetButton"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginBottom="5dp"
+        android:text="@string/socket_get_textview"
+        style="@style/RobotoTextViewStyle"
+        />
+    
 </RelativeLayout>

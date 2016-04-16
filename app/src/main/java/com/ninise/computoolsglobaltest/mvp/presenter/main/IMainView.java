@@ -1,7 +1,10 @@
 package com.ninise.computoolsglobaltest.mvp.presenter.main;
 
-/**
- * Created by ninise on 16.04.16.
- */
+import android.support.v4.app.Fragment;
+
 public interface IMainView {
+
+    void switchToFragment(Fragment fragment);
+    void exit();
+
 }

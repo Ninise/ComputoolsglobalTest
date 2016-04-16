@@ -8,4 +8,7 @@
     <string name="navigation_test_task">Test task</string>
     <string name="openDrawer">Open</string>
     <string name="closeDrawer">Close</string>
+    <string name="socket_get_button">GET</string>
+    <string name="socket_get_hint">Type up for Get</string>
+    <string name="socket_get_textview">Get:</string>
 </resources>

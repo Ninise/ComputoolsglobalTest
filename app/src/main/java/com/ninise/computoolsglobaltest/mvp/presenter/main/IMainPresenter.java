@@ -1,7 +1,9 @@
 package com.ninise.computoolsglobaltest.mvp.presenter.main;
 
-/**
- * Created by ninise on 16.04.16.
- */
+import android.view.MenuItem;
+
 public interface IMainPresenter {
+
+    boolean menuSelected(MenuItem item);
+
 }
