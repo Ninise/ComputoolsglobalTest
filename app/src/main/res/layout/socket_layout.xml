@@ -35,6 +35,8 @@
         android:layout_marginRight="5dp"
         android:layout_marginLeft="5dp"
         android:layout_marginBottom="5dp"
+        android:maxLines="50"
+        android:scrollbars="vertical"
         android:text="@string/socket_get_textview"
         style="@style/RobotoTextViewStyle"
         />

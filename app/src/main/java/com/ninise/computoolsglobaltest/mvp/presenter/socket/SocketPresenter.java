@@ -8,6 +8,8 @@ import com.ninise.computoolsglobaltest.mvp.model.network.GetResponse;
 import com.ninise.computoolsglobaltest.mvp.model.network.NetworkConnection;
 import com.ninise.computoolsglobaltest.utils.Constants;
 
+import java.util.concurrent.TimeUnit;
+
 import rx.android.schedulers.AndroidSchedulers;
 import rx.schedulers.Schedulers;
 
@@ -22,15 +24,24 @@ public class SocketPresenter implements ISocketPresenter {
     @Override
     public void getResponse(Context context, String url) {
         if (NetworkConnection.isNetworkConnectionOn(context)) {
-            GetResponse.createResponse(url)
-                    .subscribeOn(Schedulers.io())
-                    .observeOn(AndroidSchedulers.mainThread())
-                    .subscribe(s -> {
-                        mView.displayResponse(s);
-                        ActivitiesCounter.getInstance().addActivity(new DoubleViewEntity(Constants.FROM_SOCKET, "Get"));
-                    }, throwable -> mView.responseFailed());
+            if (!url.equals("")) {
+                mView.startProgress();
+                GetResponse.createResponse(url)
+                        .timeout(8, TimeUnit.SECONDS)
+                        .subscribeOn(Schedulers.io())
+                        .observeOn(AndroidSchedulers.mainThread())
+                        .subscribe(s -> {
+                            mView.displayResponse(s);
+                            ActivitiesCounter.getInstance().addActivity(new DoubleViewEntity(Constants.FROM_SOCKET, "Get"));
+                        }, throwable -> {
+                            mView.noResponseFrom(url);
+                            mView.disposeProgress();
+                        }, () -> mView.disposeProgress());
+            } else {
+                mView.editIsEmpty();
+            }
         } else {
-            mView.responseFailed();
+            mView.networkNotFound();
         }
     }
 }

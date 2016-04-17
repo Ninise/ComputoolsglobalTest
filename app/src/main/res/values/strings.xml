@@ -14,4 +14,6 @@
     <string name="network_not_found">You haven\'t an Wifi Connection :(</string>
     <string name="progress_dialog_title">Loading…</string>
     <string name="progress_dialog_message">Please wait…</string>
+    <string name="edit_is_empty">Please type up something</string>
+    <string name="no_response_from">No response from</string>
 </resources>

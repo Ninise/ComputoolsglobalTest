@@ -2,7 +2,11 @@ package com.ninise.computoolsglobaltest.mvp.presenter.socket;
 
 public interface ISocketView {
 
-    void responseFailed();
+    void networkNotFound();
     void displayResponse(String response);
+    void disposeProgress();
+    void startProgress();
+    void editIsEmpty();
+    void noResponseFrom(String url);
 
 }
